@@ -1,0 +1,37 @@
+<p>Enter your id :: </p>
+<input type="number" [(ngModel)]="id"/>
+<button type="submit" (click)="display()">Display</button>
+<p>{{records|json}}</p>
+
+DoctorId :: {{records.doctorId}} <br>
+DoctorName :: {{records.doctorName}} <br>
+Doctor Spcialization :: {{records.specialization}} <br>
+Doctor Experience :: {{records.yearsOfExperience}}
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Patient Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Phone no</th>
+            <th>Disease problem</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of patientRecords">
+            <td>{{i.patientId}}</td>
+            <td><input type="text" [(ngModel)]="i.name"></td>
+            <td><input type="text" [(ngModel)]="i.age"></td>
+            <td><input type="text" [(ngModel)]="i.address"></td>
+            <td><input type="number" [(ngModel)]="i.phoneNumber"></td>
+            <td><input type="text" [(ngModel)]="i.diseaseDetails"></td>
+            <td><button type="submit" (click)="updatePatient(i.patientId, i.patientName, i.age, i.address, i.phoneNumber, i.diseaseDetails)" >Update</button></td> <!-- event binding -->
+            <td><button type="submit" (click)="deletePatient(i.patientId)">Delete</button></td>
+        </tr>
+    </tbody>
+    </table>
+ 

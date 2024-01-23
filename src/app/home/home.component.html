@@ -1,0 +1,62 @@
+<body class="container-fluid min-vh-100">
+  <div class="container-fluid">
+    <header class="text-center text-light p-3 mb-3">
+      <h1>Hospital Management Portal</h1>
+    </header>
+
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-4 mt-3 rounded login-form">
+        <div class="form">
+          <form>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username :: </label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                aria-describedby="emailHelp"
+                name="email"
+                [(ngModel)]="model.email"
+              />
+              <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Username :: </label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                aria-describedby="emailHelp"
+                name="password"
+                [(ngModel)]="model.password"
+              />
+            </div>
+
+            <div class="mb-3">
+              <!-- <button type="submit">Admin SignUp</button> -->
+              <button
+                class="btn bg-primary bg-gradient me-1"
+                type="submit"
+                (click)="doctorLogin()"
+              >
+                Doctor Login
+              </button>
+              <button
+                class="btn bg-warning bg-gradient me-1"
+                type="submit"
+                (click)="doctorSignup()"
+              >
+                Doctor Signup
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-light text-center p-3 ms-3 me-3 fixed-bottom">
+      <h4>New Delhi, INDIA</h4>
+    </footer>
+  </div>
+</body>
